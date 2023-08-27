@@ -16,10 +16,10 @@ public class JpaMain {
         tx.begin();
 
         try {
-            List<Member> findMembers = em.createQuery("select m from Member as m", Member.class)
-                    .setFirstResult(1)  // 첫번째 인덱스
-                    .setMaxResults(10)  // 페이징 할 때 갯수
-                    .getResultList();
+            Member member = new Member();
+            member.setUsername("C");
+
+            em.persist(member);
 
             tx.commit();
         } catch (Exception e) {
