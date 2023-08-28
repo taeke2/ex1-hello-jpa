@@ -3,8 +3,9 @@ package hellojpa;
 import javax.persistence.*;
 
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE) // () 내용 생략 가능 -> default가 단일테이블임
-public class Item {
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+public abstract class Item {    // 이런 구조는 추상클래스로 만드는게 맞다.
+
     @Id @GeneratedValue
     private Long id;
 
