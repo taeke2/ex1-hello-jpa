@@ -3,8 +3,7 @@ package hellojpa;
 import javax.persistence.*;
 
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
-@DiscriminatorColumn
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE) // () 내용 생략 가능 -> default가 단일테이블임
 public class Item {
     @Id @GeneratedValue
     private Long id;
